@@ -1,5 +1,8 @@
 package com.zyzq.zhuixu;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -64,14 +67,36 @@ public class SingleChapterContent {
         		//如果子结点属于文本结点
         		if(node instanceof TextNode){
         			TextNode text = (TextNode)node;
-        			content.append(text.getText().trim().replaceAll("&nbsp;", "-"));
+        			content.append(text.getText().trim().replaceAll("&nbsp;", " "));
         		}
         		//子节点属于标签节点，<br/>
         		if(node instanceof TagNode){
-        			content.append("\n");
+        			content.append("\r\n");
         		}
         	}
         }
-        System.out.println(content);
+        //定义文件输出流
+        FileOutputStream out = null;
+        try {
+        	//将网页章节内容提取的字符串转化为字节数组
+			byte[] data = content.toString().getBytes("utf-8");
+			//定义输出文件路径
+			out = new FileOutputStream("D:/zhuixu.txt");
+			//写入文件
+			out.write(data);
+			out.flush();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally{
+			if(out != null){
+				try {
+					out.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 }
