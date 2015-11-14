@@ -1,4 +1,4 @@
-package com.zyzq.zuixu;
+package com.zyzq.zhuixu;
 
 import org.htmlparser.Node;
 import org.htmlparser.NodeFilter;

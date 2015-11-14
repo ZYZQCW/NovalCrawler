@@ -1,4 +1,4 @@
-package com.zyzq.zuixu.test;
+package com.zyzq.zhuixu.test;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -14,9 +14,9 @@ import org.htmlparser.tags.LinkTag;
 import org.htmlparser.util.NodeList;
 import org.htmlparser.util.ParserException;
 
+import com.zyzq.zhuixu.LinkStartFilter;
+import com.zyzq.zhuixu.been.Chapter;
 import com.zyzq.zhuixu.util.ChapterLinkAndXml;
-import com.zyzq.zuixu.LinkStartFilter;
-import com.zyzq.zuixu.been.Chapter;
 
 public class TestChapterLinkAndXml {
 

@@ -1,4 +1,4 @@
-package com.zyzq.zuixu;
+package com.zyzq.zhuixu;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

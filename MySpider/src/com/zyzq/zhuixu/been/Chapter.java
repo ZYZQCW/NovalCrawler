@@ -1,4 +1,4 @@
-package com.zyzq.zuixu.been;
+package com.zyzq.zhuixu.been;
 
 /*
 * 
